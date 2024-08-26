@@ -69,7 +69,6 @@ public class JobSeekerApplyController {
                                 break;
                             }
                         }
-//                        sds
                         model.addAttribute("alreadyApplied",exists);
                         model.addAttribute("alreadySaved", saved);
                     }
