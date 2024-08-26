@@ -3,7 +3,7 @@ FROM jelastic/maven:3.9.5-openjdk-21 AS build
 WORKDIR /app
 
 # Copy the Maven project files and dependencies
-COPY pom.xml .
+COPY . .
 RUN mvn dependency:go-offline
 
 # Copy the entire source code and build the application
@@ -21,4 +21,4 @@ COPY --from=build /app/target/jobportal.jar jobportal.jar
 EXPOSE 8080
 
 # Set the entrypoint to run the jar file
-ENTRYPOINT ["java", "-jar", "/jobportal.jar"]
+ENTRYPOINT ["java", "-jar", "/app/jobportal.jar"]
