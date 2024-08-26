@@ -9,7 +9,7 @@
 
 # Stage 1: Build the application
 # Stage 1: Build the application
-FROM maven:3.8.5-openjdk-21 AS build
+FROM jelastic/maven:3.9.5-openjdk-21 AS build
 WORKDIR /app
 COPY . .
 RUN mvn clean package -DskipTests
