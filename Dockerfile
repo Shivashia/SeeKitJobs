@@ -17,6 +17,6 @@ RUN mvn clean package -DskipTests
 # Stage 2: Run the application
 FROM openjdk:21-jdk-slim
 WORKDIR /app
-COPY --from=build /app/target/demo-0.0.1-SNAPSHOT.jar demo.jar
+COPY --from=build /app/target/jobportal-0.0.1-SNAPSHOT jobportal.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "demo.jar"]
